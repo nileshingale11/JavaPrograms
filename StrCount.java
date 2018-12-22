@@ -14,7 +14,7 @@ public class StrCount{
 		Scanner scan = new Scanner(System.in);
 		System.out.println("Enter your string:");
 		String str = scan.nextLine();
-		String[] words = str.split("[ \t\n\f\r]");
+		String[] words = str.split("[ \t,.-?!=/:;*]+");
 		word = new StrCount[words.length];
 		int i;
 		for (i = 0; i < words.length; i++){
@@ -23,24 +23,14 @@ public class StrCount{
 				/*if(words[i].charAt(j) != ',' && words[i].charAt(j) != '.' && words[i].charAt(j) != '-')
 					count1++;*/
 				switch(words[i].charAt(j)){
-					case ',':
-					case '.':
-					case '-':
-					case '=':
 					case '<':
 					case '>':
-					case '/':
-					case ':':
-					case ';':
 					case '(':
 					case ')':
 					case '[':
 					case ']':
 					case '{':
 					case '}':
-					case '	':
-					case '!':
-					case '?':
 					case '"':
 						break;
 					default:
