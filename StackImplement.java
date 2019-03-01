@@ -7,7 +7,7 @@ class Stack{
 	static int index = 0;
 	JFrame f1;
 	JTextField t;
-	JButton ss, b1, b2, b3, b4;
+	JButton ss, b1, b2, b3;
 	Stack(){
 		f1 = new JFrame("Stack Implementation");
 		ss = new JButton("Stack Size");
@@ -16,14 +16,12 @@ class Stack{
 		t.setBounds(120, 20, 50, 30);
 		b1 = new JButton("Push");
 		b2 = new JButton("Pop");
-		b3 = new JButton("Peak");
-		b4 = new JButton("Display");
+		b3 = new JButton("Peek");
 		b1.setBounds(120, 60, 70, 30);
 		b2.setBounds(120, 100, 70, 30);
 		b3.setBounds(120, 140, 70, 30);
-		b4.setBounds(120, 180, 100, 30);
 		f1.add(t); f1.add(b1); f1.add(ss);
-		f1.add(b2);	f1.add(b3);	f1.add(b4);
+		f1.add(b2);	f1.add(b3);
 		f1.setLayout(null);
 		f1.setSize(500, 500);
 		f1.setVisible(true);
@@ -85,24 +83,6 @@ class Stack{
 					JOptionPane.showMessageDialog(f1, "Number at peak is " + stack[index - 1]);
 				else
 					JOptionPane.showMessageDialog(f1, "Stack is empty.");
-			}
-		});
-		
-		b4.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent ae) {
-				if (index == 0)
-					JOptionPane.showMessageDialog(f1, "Stack is empty.");
-				else {
-					JFrame f = new JFrame("Stack");
-					for (int i = index - 1; i >= 0; i--) {
-						JLabel t = new JLabel(Integer.toString(stack[i]));
-						f.add(t);
-					}
-					f.setLayout(new GridLayout(stack.length, 0, 0, 0));
-					f.setSize(200, 300);
-					f.setLocation(150, 150);
-					f.setVisible(true);
-				}
 			}
 		});
 	}
