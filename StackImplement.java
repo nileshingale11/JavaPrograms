@@ -1,5 +1,6 @@
+//Stack implementation using UI Interface.
 import java.awt.*;
-import java.awt.event.*;
+import java.awt.event.*;	//package for event handling
 import javax.swing.*;
 
 class Stack{
@@ -9,8 +10,8 @@ class Stack{
 	JTextField t;
 	JButton ss, b1, b2, b3;
 	Stack(){
-		f1 = new JFrame("Stack Implementation");
-		ss = new JButton("Stack Size");
+		f1 = new JFrame("Stack Implementation");	//addition of frame
+		ss = new JButton("Stack Size");		//addition of button
 		ss.setBounds(180, 20, 120, 30);
 		t = new JTextField(5);
 		t.setBounds(120, 20, 50, 30);
